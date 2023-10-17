@@ -1,20 +1,9 @@
 <?php
-$title = 'Давыдов Артём Сергеевич 221-362 - Лабораторная работа №3';
+$title = 'Давыдов Артём Сергеевич 221-362 - Лабораторная работа №4';
 $array = array('DEFENDER', 'DISCOVERY', 'RANGE ROVER', 'RANGE ROVER SPORT', 'RANGE ROVER EVOQUE', 'RANGE ROVER VELAR');
 ?>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-    $topic = $_POST['topic'];
-    $consent = isset($_POST['consent']) ? 'Да' : 'Нет';
-    $referral = $_POST['referral'];
 
-    header("Location: home.php?name=$name&email=$email&message=$message&topic=$topic&consent=$consent&referral=$referral");
-    exit;
-}
-?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -29,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    
     <header>
         <nav>
         <ul>
@@ -55,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li>
                     <a href="<?php
                     $name = 'Обратная связь';
-                    $link = 'header.html';
+                    $link = 'retconn.php';
                     $current_page = false;
 
                     echo $link;
@@ -73,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li>
                     <a href="<?php
                     $name = 'Вход в систему';
-                    $link = 'two2.php';
+                    $link = 'auth.html';
                     $current_page = false;
 
                     echo $link;
@@ -120,7 +108,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </thead>
                 <tbody>
                     <?php
-                    // Здесь вы можете использовать PHP для динамической генерации данных в таблице.
                     $min = 20000;
                     $max = 350000;
                     $models = array(
